@@ -1,0 +1,26 @@
+{
+  "name": "portfoliochatbot",
+  "version": "1.0.0",
+  "description": "chatbot that serves as my portfolio",
+  "engines": {
+    "node": "v14.13.0",
+    "npm": "7.15.0"
+  },
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "star": "node server.js"
+  },
+  "author": "Dries Veboven",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.2.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "nodemon": "^2.0.12"
+  }
+}
