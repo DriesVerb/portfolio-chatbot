@@ -7,6 +7,9 @@ const Home = () => {
     return (
         <div className="home">
             <ChatBot/>
+            <footer className="footer">
+                This chatbot is written by Dries Verboven
+            </footer>
         </div>
     )
 }

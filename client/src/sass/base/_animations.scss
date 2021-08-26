@@ -1,13 +1,13 @@
 .message__animation--0 {
-    animation: wipe .2s ease-in-out;
-}
-
-.message__animation--1 {
     animation: wipe .4s ease-in-out;
 }
 
+.message__animation--1 {
+    animation: wipe .6s ease-in-out;
+}
+
 .message__animation--2 {
-    animation: wipe .8s ease-in-out;
+    animation: wipe 1s ease-in-out;
 }
 
 .robot__animation--0{
@@ -31,6 +31,10 @@
     animation: slideUp .6s ease-in;
 }
 
+.query__animation {
+    animation: queryLight 2s ease-out;
+}
+
 @keyframes wipe {
     0% {
         background-color: transparent;
@@ -38,12 +42,12 @@
         transform: translateX(0px);
     }
     75% {
-        background-color: aqua;
+        background-color: $main-red;
         color: transparent;
         transform: translateX(-100px);
     }
     100% {
-        background-color: yellow;
+        background-color: $main-d-blue;
         transform: translateX(0px);
     }
 }
@@ -61,7 +65,19 @@
     }
     100% {
         transform: translateY(0px);
-        border-top: 1px solid black;
+        border-top: 1px solid $main-black;
+    }
+}
+
+@keyframes queryLight {
+    0% {
+        color: transparent;
+    }
+    75% {
+        color: $main-l-blue;
+    }
+    100% {
+        color: $main-d-blue;
     }
 }
 

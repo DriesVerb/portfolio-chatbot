@@ -40,14 +40,19 @@ const ChatBot = () => {
     return (
         <div className="chatbot">
            <div className="chatbot__title">
-               <div className="chatbot__logo">{path.length > 0 ? <div>⬅️</div> : <div></div>}</div>
-               <div className="chatbot__title-text">{loading ? <div className={`robot__animation--${messages.length}`}>🤖</div> : <div>🤖</div>}</div>
-               <div className="chatbot__logo">➡️</div>
+               <div className="chatbot__logo">{path.length > 0 ? <div><span className="chatbot__back">⬅️</span></div> : <div>{" "}</div>}</div>
+               <div className="chatbot__title-text">{loading ? <div className={`robot__animation--${messages.length}`}><span className="chatbot__robot">🤖</span></div> : <div><span className="chatbot__robot">🤖</span></div>}</div>
+               <div className="chatbot__logo"><span className="chatbot__back">⚙️</span></div>
            </div>
            <div className="chatbot__container">
                {loading ? null : <div className="chatbot__top-message" dangerouslySetInnerHTML={showTopMessageShow()}></div>}
 
-               {loading ? <div className="loading-middle">Loading</div> : messages.map((message, index) => <ChatbotMessage navigation={navigation} onChangeNavigation={saveCurrent} message={message} index={index} key={index}/>)}
+                
+                {loading ? <div className="loading-middle">Loading</div> : <div className="chatbot__messages">{messages.map((message, index) => {
+                    return(<ChatbotMessage navigation={navigation} onChangeNavigation={saveCurrent} message={message} index={index} key={index}/>)
+                })}</div>}
+                
+               
   
            </div>
            {!loading && input ? <form onSubmit={(e)=> {
@@ -56,10 +61,10 @@ const ChatBot = () => {
             getAnswer(nextQuestion);
             saveCurrent(nextQuestion);
            } } className="chatbot__footer input__animation">
-                    <input onChange={(e)=> getInputName(e)} type="text" name={inputValue} className="chatbot__text-input"/>
+                    <input onChange={(e)=> getInputName(e)} type="text" name={inputValue} className="chatbot__text-input" autofocus/>
                         <button type="submit" 
                        className="chatbot__return-button">
-                   RETURN
+                   SEND
                </button>
            </form> : null} 
         </div>

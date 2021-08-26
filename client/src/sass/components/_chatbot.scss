@@ -1,7 +1,24 @@
 .chatbot {
-    height: 60%;
-    width: 20%;
-    border: 3px solid black;
+    height: 70%;
+    width: 40%;
+    box-shadow: 0px 0px 1.5rem -1px $main-black;
+    background-color: $main-white;
+
+    @include respond(tab-land) {
+        width: 50%;
+    }
+
+    @include respond(tab-port) {
+        height: 70%;
+        width: 60%;
+    }
+
+    @include respond(phone) {
+        width: 70%;
+        height: 85%;
+    }
+
+    border: 3px solid $main-black;
     border-radius: 10px;
 
     display: flex;
@@ -29,32 +46,48 @@
         font-size: 2rem;
     }
 
-    &__close-button {
-        align-self: flex-start;
-        margin: 1rem 1rem 0 0;
+    &__robot {
+        font-size: 4rem;
         cursor: pointer;
-        font-size: 2rem;
+
+        &:hover{
+            animation: shake 1.2s  infinite;
+        }
+    }
+
+    &__back {
+        font-size: 1.5rem;
     }
 
     &__container {
         flex: 8;
-        border-top: 1px solid black;
+        border-top: 1px solid $main-black;
 
+        height: 100%;
         width: 100%;
 
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+        justify-content: space-between;
+        align-items: space-between;
         overflow: hidden;
     }
 
     &__top-message {
-        padding: 2rem;
-        background-color: tomato;
+        padding: 1rem;
+        background-color: $main-red;
         margin: 1rem;
-        border-radius: 5px;
-        font-size: 2rem;
+        border-radius: .5rem;
+        font-size: 2.5rem;
+        align-self: flex-start;
+    }
+
+    &__messages {
+        align-self: flex-end;
+    }
+
+    &__query {
+        color: $main-white;
     }
 
     &__footer {
@@ -64,7 +97,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        border-top: 1px solid black;
+        border-top: 1px solid $main-black;
     }
 
     &__text-input {
@@ -83,4 +116,5 @@
 
 .loading-middle {
     margin-top: 50%;
+    align-self: center;
 }

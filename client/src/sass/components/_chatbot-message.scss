@@ -3,7 +3,8 @@
     text-align: right;
     padding: 1rem;
     cursor: pointer;
-    background-color: yellow;
+    background-color: $main-l-blue;
+    border-radius: .5rem;
     align-self: flex-end;
 
     &__text {
@@ -13,30 +14,29 @@
 
 .inside {
     margin: 1rem;
-    background-color: tomato;
+    background-color: $main-red;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 1rem;
 
     &__text {
         line-height: 1.2;
-        font-size: 1.6rem;
-        margin: 1rem 0;
+        margin: .5rem 0;
     }
 
     &__link {
-        color: white;
+        color: $main-white;
 
         &:hover,
         &:active {
-            color: purple;
-            background-color: white;
+            color: $main-d-blue;
+            background-color: $main-white;
             text-decoration: underline;
         }
     }
 }
 
 .bio {
-    background-color: tomato;
+    background-color: $main-red;
     border-radius: 10px;
 
     display: flex;
@@ -45,24 +45,22 @@
     align-items: center;
 
     &__avatar {
-        height: 125px;
-        width: 125px;
-        border-radius: 5px;
+        height: 12.5rem;
+        width: 12.5rem;
+        border-radius: .5rem;
     }
 
     &__text {
-        width: 90%;
-        margin: 1rem;
-        font-size: 1.7rem;
+        margin: .5rem;
     }
 
     &__link {
-        color: white;
+        color: $main-white;
 
         &:hover,
         &:active {
-            color: purple;
-            background-color: white;
+            color: $main-d-blue;
+            background-color: $main-white;
             text-decoration: underline;
         }
     }
