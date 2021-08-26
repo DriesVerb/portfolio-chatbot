@@ -194,7 +194,7 @@ a {
 }
 
 .query__animation {
-  animation: queryLight 2s ease-out;
+  animation: queryLight 0.6s ease-out;
 }
 
 @keyframes wipe {
@@ -423,6 +423,7 @@ a {
   height: 12.5rem;
   width: 12.5rem;
   border-radius: 0.5rem;
+  margin-bottom: 1rem;
 }
 .bio__text {
   margin: 0.5rem;
