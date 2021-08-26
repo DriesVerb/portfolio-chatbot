@@ -217,16 +217,18 @@ a {
   0% {
     background-color: transparent;
     color: transparent;
-    transform: translateY(0px);
+    border-top: 0px solid #0A0A0A;
+    transform: translateX(0px);
   }
   75% {
     display: block;
     color: transparent;
-    transform: translateY(-100px);
+    transform: translateX(-100px);
+    border-top: 0px solid #0A0A0A;
   }
   100% {
-    transform: translateY(0px);
-    border-top: 1px solid #0A0A0A;
+    border-top: 0px solid #0A0A0A;
+    transform: translateX(0px);
   }
 }
 @keyframes queryLight {
@@ -390,6 +392,9 @@ a {
 }
 .message__text {
   font-size: 2rem;
+}
+.message:hover {
+  background-color: #1d3557;
 }
 
 .inside {
